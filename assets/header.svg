@@ -24,24 +24,14 @@
     @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
     @keyframes slideIn { from { opacity: 0; transform: translateX(-30px); } to { opacity: 1; transform: translateX(0); } }
     @keyframes pulse { 0%, 100% { opacity: 0.3; } 50% { opacity: 0.8; } }
-    @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
-    @keyframes gridPulse { 0%, 100% { opacity: 0.03; } 50% { opacity: 0.08; } }
     .title { animation: slideIn 0.8s ease-out forwards; }
     .subtitle { animation: slideIn 0.8s ease-out 0.2s forwards; opacity: 0; }
     .tagline { animation: fadeIn 1s ease-out 0.5s forwards; opacity: 0; }
     .line { animation: fadeIn 1.2s ease-out 0.3s forwards; opacity: 0; }
-    .grid-cell { animation: gridPulse 4s ease-in-out infinite; }
-    .dot { animation: pulse 3s ease-in-out infinite; }
-    .logo-group { animation: float 6s ease-in-out infinite; }
   </style>
 
   <!-- Background -->
   <rect width="900" height="300" fill="url(#bg)"/>
-
-  <!-- Grid pattern -->
-  <g class="grid-cell" style="animation-delay:0s"><rect x="0" y="0" width="60" height="60" fill="none" stroke="#6db33f" stroke-width="0.3" opacity="0.05"/><rect x="60" y="0" width="60" height="60" fill="none" stroke="#6db33f" stroke-width="0.3" opacity="0.05"/><rect x="120" y="0" width="60" height="60" fill="none" stroke="#6db33f" stroke-width="0.3" opacity="0.05"/></g>
-  <g class="grid-cell" style="animation-delay:1s"><rect x="780" y="180" width="60" height="60" fill="none" stroke="#6db33f" stroke-width="0.3" opacity="0.05"/><rect x="840" y="180" width="60" height="60" fill="none" stroke="#6db33f" stroke-width="0.3" opacity="0.05"/><rect x="780" y="240" width="60" height="60" fill="none" stroke="#6db33f" stroke-width="0.3" opacity="0.05"/></g>
-  <g class="grid-cell" style="animation-delay:2s"><rect x="600" y="0" width="60" height="60" fill="none" stroke="#6db33f" stroke-width="0.3" opacity="0.05"/><rect x="660" y="60" width="60" height="60" fill="none" stroke="#6db33f" stroke-width="0.3" opacity="0.05"/></g>
 
   <!-- Corner accents -->
   <rect x="0" y="0" width="3" height="40" fill="url(#accent)" opacity="0.6"/>
@@ -49,34 +39,21 @@
   <rect x="897" y="260" width="3" height="40" fill="url(#accent)" opacity="0.8"/>
   <rect x="860" y="297" width="40" height="3" fill="url(#accent)" opacity="0.8"/>
 
-  <!-- Logo pixel art -->
-  <g class="logo-group" transform="translate(80, 75)">
-    <rect x="12" y="0" width="12" height="12" fill="#4a8c2a" rx="1"/>
-    <rect x="36" y="0" width="24" height="12" fill="#3d7a24" rx="1"/>
-    <rect x="60" y="0" width="24" height="12" fill="#8cc63f" rx="1"/>
-    <rect x="24" y="24" width="24" height="24" fill="#7ab648" rx="1"/>
-    <rect x="48" y="24" width="24" height="24" fill="none" stroke="#3d7a24" stroke-width="1" rx="1" opacity="0.2"/>
-    <rect x="72" y="24" width="24" height="24" fill="#3d7a24" rx="1"/>
-    <rect x="0" y="60" width="12" height="12" fill="#5a9e30" rx="1"/>
-    <rect x="48" y="60" width="24" height="24" fill="#a0d450" rx="1"/>
-    <rect x="60" y="84" width="16" height="16" fill="#7ab648" rx="1"/>
+  <!-- Logo icon (simplified, no green squares) -->
+  <g transform="translate(120, 85)">
+    <rect x="0" y="0" width="80" height="80" rx="12" fill="#1a1a2e" stroke="#3d7a24" stroke-width="1" opacity="0.5"/>
+    <text x="40" y="58" font-family="'Segoe UI',system-ui,sans-serif" font-size="40" font-weight="800" fill="url(#accent)" text-anchor="middle" letter-spacing="-2">B5</text>
   </g>
 
-  <!-- Decorative dots -->
-  <circle cx="68" cy="210" r="2" fill="#6db33f" class="dot" style="animation-delay:0s"/>
-  <circle cx="78" cy="230" r="1.5" fill="#8cc63f" class="dot" style="animation-delay:1s"/>
-  <circle cx="55" cy="245" r="1" fill="#4a8c2a" class="dot" style="animation-delay:2s"/>
-
   <!-- Animated line -->
-  <line x1="80" y1="195" x2="200" y2="195" stroke="url(#line-glow)" stroke-width="1.5" class="line" filter="url(#glow)"/>
-  <circle r="2" fill="#8cc63f" filter="url(#glow)"><animateMotion dur="3s" repeatCount="indefinite" path="M80,195 L200,195"/></circle>
+  <line x1="120" y1="185" x2="200" y2="185" stroke="url(#line-glow)" stroke-width="1.5" class="line" filter="url(#glow)"/>
 
   <!-- Title -->
   <g transform="translate(240, 0)">
     <text x="0" y="105" font-family="'Segoe UI',system-ui,sans-serif" font-size="52" font-weight="700" fill="#e0e0e0" class="title" letter-spacing="-1">BIT<tspan fill="url(#accent)">512</tspan></text>
     <rect x="0" y="120" width="100" height="2" fill="url(#accent)" rx="1" class="line"/>
-    <text x="0" y="155" font-family="'Segoe UI',system-ui,sans-serif" font-size="18" fill="#888" class="subtitle" letter-spacing="4">TECHNOLOGY &amp; INNOVATION</text>
-    <text x="0" y="195" font-family="'Segoe UI',system-ui,sans-serif" font-size="13" fill="#666" class="tagline" letter-spacing="1">Enterprise Software  ·  AI Solutions  ·  Cloud Architecture</text>
+    <text x="0" y="155" font-family="'Segoe UI',system-ui,sans-serif" font-size="18" fill="#888" class="subtitle" letter-spacing="4">TECNOLOGIA E INNOVACION</text>
+    <text x="0" y="195" font-family="'Segoe UI',system-ui,sans-serif" font-size="13" fill="#666" class="tagline" letter-spacing="1">Software Empresarial  ·  Soluciones IA  ·  Arquitectura Cloud</text>
 
     <!-- Tech badges -->
     <g class="tagline" transform="translate(0,215)">
@@ -86,13 +63,6 @@
       <rect x="256" y="0" width="65" height="22" rx="4" fill="#1a1a2e" stroke="#3d7a24" stroke-width="0.5"/><text x="288" y="15" font-family="monospace" font-size="9" fill="#6db33f" text-anchor="middle">Python</text>
       <rect x="328" y="0" width="85" height="22" rx="4" fill="#1a1a2e" stroke="#3d7a24" stroke-width="0.5"/><text x="370" y="15" font-family="monospace" font-size="9" fill="#6db33f" text-anchor="middle">Azure + K8s</text>
     </g>
-  </g>
-
-  <!-- Code snippets -->
-  <g opacity="0.15">
-    <text x="720" y="60" font-family="monospace" font-size="10" fill="#6db33f" class="dot" style="animation-delay:0.5s">const build = async () =&gt;</text>
-    <text x="740" y="80" font-family="monospace" font-size="10" fill="#6db33f" class="dot" style="animation-delay:1.5s">  await deploy()</text>
-    <text x="720" y="100" font-family="monospace" font-size="10" fill="#4a8c2a" class="dot" style="animation-delay:2.5s">// shipping enterprise</text>
   </g>
 
   <!-- Bottom line -->
